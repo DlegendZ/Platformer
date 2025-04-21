@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bluas24i8s6sx"]
+
+[ext_resource type="Script" path="res://Script/diamond.gd" id="1_1ttwb"]
+[ext_resource type="Texture2D" uid="uid://bcu8neutq4tp4" path="res://Assets/Tiles/tile_0067.png" id="1_pfjj8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_anol7"]
+radius = 6.0
+
+[sub_resource type="Animation" id="Animation_xyikw"]
+resource_name = "Drop_diamond"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -36.755)]
+}
+
+[sub_resource type="Animation" id="Animation_o6u8u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sk38b"]
+_data = {
+"Drop_diamond": SubResource("Animation_xyikw"),
+"RESET": SubResource("Animation_o6u8u")
+}
+
+[node name="Diamond" type="Area2D"]
+z_index = 1
+script = ExtResource("1_1ttwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pfjj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_anol7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sk38b")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

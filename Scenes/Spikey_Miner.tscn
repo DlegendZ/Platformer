@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://qnqc8vdt2k7f"]
+
+[ext_resource type="Texture2D" uid="uid://0mm1lud0ul28" path="res://Assets/Tiles/Characters/tile_0015.png" id="1_83kgl"]
+[ext_resource type="Script" path="res://Script/Spikey_Miner.gd" id="1_g6nem"]
+[ext_resource type="Texture2D" uid="uid://b2w4vu8j8qo5i" path="res://Assets/Tiles/Characters/tile_0016.png" id="2_djajd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aioi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_83kgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_djajd")
+}],
+"loop": true,
+"name": &"Idle_Animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d81ih"]
+size = Vector2(15, 13)
+
+[node name="Spikey_Miner" type="Area2D"]
+script = ExtResource("1_g6nem")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aioi4")
+animation = &"Idle_Animation"
+autoplay = "Idle_Animation"
+frame_progress = 0.495703
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_d81ih")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

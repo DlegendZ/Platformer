@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv5w5267pxbfx"]
+
+[ext_resource type="Texture2D" uid="uid://dnkcbfuq6syut" path="res://Assets/Tiles/tile_0151.png" id="1_dewb4"]
+[ext_resource type="Script" path="res://Script/coin.gd" id="1_pew5r"]
+[ext_resource type="Texture2D" uid="uid://1yyko00s38e" path="res://Assets/Tiles/tile_0152.png" id="2_yl6h7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_juhe4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dewb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yl6h7")
+}],
+"loop": true,
+"name": &"Rotating",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tvr8"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_vl5mw"]
+resource_name = "Drop_coin"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -36.755)]
+}
+
+[sub_resource type="Animation" id="Animation_3mnjg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xgknc"]
+_data = {
+"Drop_coin": SubResource("Animation_vl5mw"),
+"RESET": SubResource("Animation_3mnjg")
+}
+
+[node name="Coin" type="Area2D"]
+z_index = 1
+script = ExtResource("1_pew5r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_juhe4")
+animation = &"Rotating"
+autoplay = "Rotating"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0tvr8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xgknc")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

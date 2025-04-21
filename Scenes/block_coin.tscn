@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct5ts2lsdrqhp"]
+
+[ext_resource type="Script" path="res://Script/block_coin.gd" id="1_svlsu"]
+[ext_resource type="Texture2D" uid="uid://c1yfocmnnyplq" path="res://Assets/Tiles/tile_0031.png" id="2_5olkr"]
+[ext_resource type="PackedScene" uid="uid://cv5w5267pxbfx" path="res://Scenes/coin.tscn" id="2_u1tfp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cttpt"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyjd4"]
+size = Vector2(18, 3)
+
+[node name="BlockCoin" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_svlsu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5olkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_cttpt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_yyjd4")
+
+[node name="Coin" parent="." instance=ExtResource("2_u1tfp")]
+visible = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

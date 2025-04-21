@@ -1,0 +1,38 @@
+[gd_scene load_steps=15 format=3 uid="uid://8bluf2mpjkyp"]
+
+[ext_resource type="PackedScene" uid="uid://dywom0ie23cet" path="res://Scenes/Bat.tscn" id="1_knwkx"]
+[ext_resource type="PackedScene" uid="uid://doycu1b3cqwj" path="res://Scenes/SmallBug.tscn" id="2_tom56"]
+[ext_resource type="PackedScene" uid="uid://jnd0748jngb7" path="res://Scenes/Spike.tscn" id="3_pxm8r"]
+[ext_resource type="PackedScene" uid="uid://qnqc8vdt2k7f" path="res://Scenes/Spikey_Miner.tscn" id="4_axr33"]
+[ext_resource type="PackedScene" uid="uid://dt4ydgsp0wqsa" path="res://Scenes/Spike_Down.tscn" id="5_w71t6"]
+[ext_resource type="PackedScene" uid="uid://bfowxr6xiri7s" path="res://Scenes/BigBug.tscn" id="6_2v8ug"]
+[ext_resource type="PackedScene" uid="uid://ct5ts2lsdrqhp" path="res://Scenes/block_coin.tscn" id="7_wyon0"]
+[ext_resource type="PackedScene" uid="uid://d2pvrl50vsaso" path="res://Scenes/block_diamond.tscn" id="8_jlnd1"]
+[ext_resource type="PackedScene" uid="uid://cv5w5267pxbfx" path="res://Scenes/coin.tscn" id="9_kr21w"]
+[ext_resource type="PackedScene" uid="uid://bluas24i8s6sx" path="res://Scenes/diamond.tscn" id="10_81wqk"]
+[ext_resource type="PackedScene" uid="uid://eexmrutqmp1d" path="res://Scenes/emotionalBlock.tscn" id="11_sy1n6"]
+[ext_resource type="PackedScene" uid="uid://b0dethn4mgbbk" path="res://Scenes/MovingBomb.tscn" id="12_elrd4"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_50oqv"]
+scenes/1/scene = ExtResource("1_knwkx")
+scenes/2/scene = ExtResource("6_2v8ug")
+scenes/3/scene = ExtResource("7_wyon0")
+scenes/4/scene = ExtResource("8_jlnd1")
+scenes/5/scene = ExtResource("9_kr21w")
+scenes/7/scene = ExtResource("10_81wqk")
+scenes/8/scene = ExtResource("11_sy1n6")
+scenes/9/scene = ExtResource("12_elrd4")
+scenes/10/scene = ExtResource("2_tom56")
+scenes/11/scene = ExtResource("3_pxm8r")
+scenes/12/scene = ExtResource("4_axr33")
+scenes/13/scene = ExtResource("5_w71t6")
+
+[sub_resource type="TileSet" id="TileSet_ptqg6"]
+tile_size = Vector2i(18, 18)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetScenesCollectionSource_50oqv")
+
+[node name="Obstacles" type="TileMap"]
+tile_set = SubResource("TileSet_ptqg6")
+format = 2

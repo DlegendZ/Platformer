@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://eexmrutqmp1d"]
+
+[ext_resource type="Texture2D" uid="uid://cyyq74fw126k0" path="res://Assets/Tiles/Characters/tile_0011.png" id="1_bmimb"]
+[ext_resource type="Script" path="res://Script/emotionalBlock.gd" id="1_lbk7m"]
+[ext_resource type="Texture2D" uid="uid://bkvnitwlenque" path="res://Assets/Tiles/Characters/tile_0012.png" id="2_o6sjn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4o1p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o6sjn")
+}],
+"loop": true,
+"name": &"Angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bmimb")
+}],
+"loop": true,
+"name": &"Stable",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1poh"]
+size = Vector2(18, 18)
+
+[node name="EmotionalBlock" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_lbk7m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r4o1p")
+animation = &"Stable"
+autoplay = "Stable"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t1poh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

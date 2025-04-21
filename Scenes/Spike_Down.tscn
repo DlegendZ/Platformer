@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt4ydgsp0wqsa"]
+
+[ext_resource type="Texture2D" uid="uid://ee7id4ac3r8j" path="res://Assets/Tiles/tile_0068.png" id="1_pqtrq"]
+[ext_resource type="Script" path="res://Script/Spike_Down.gd" id="1_tcygv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkxb2"]
+size = Vector2(18, 9)
+
+[node name="Spike_Down" type="Area2D"]
+script = ExtResource("1_tcygv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("1_pqtrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_nkxb2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

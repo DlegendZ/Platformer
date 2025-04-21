@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://clxmtid6dohbf"]
+
+[ext_resource type="Texture2D" uid="uid://cf24jhci82uc6" path="res://Assets/UI/Sprites/flat-dark/flatDark23.png" id="1_3ggcu"]
+[ext_resource type="Texture2D" uid="uid://crqdkpykhkfcb" path="res://Assets/UI/Sprites/shaded-dark/shadedDark24.png" id="2_sijqm"]
+[ext_resource type="Texture2D" uid="uid://b8lwq2st05skx" path="res://Assets/UI/Sprites/flat-dark/flatDark24.png" id="3_bxrtn"]
+[ext_resource type="Texture2D" uid="uid://butfnqqcombh3" path="res://Assets/UI/Sprites/shaded-dark/shadedDark25.png" id="4_v4mwk"]
+[ext_resource type="Texture2D" uid="uid://bccqsxgwgo1hn" path="res://Assets/UI/Sprites/flat-dark/flatDark25.png" id="5_gj07f"]
+[ext_resource type="Texture2D" uid="uid://d0eswa3h5usxc" path="res://Assets/UI/Sprites/shaded-dark/shadedDark26.png" id="6_b32pk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l34rg"]
+radius = 40.35
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdxhr"]
+radius = 40.35
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34g3j"]
+radius = 40.35
+
+[node name="Control" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+position = Vector2(28, 205.44)
+texture_normal = ExtResource("1_3ggcu")
+texture_pressed = ExtResource("2_sijqm")
+shape = SubResource("CircleShape2D_l34rg")
+action = "Left"
+
+[node name="Right" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+position = Vector2(122, 205.44)
+texture_normal = ExtResource("3_bxrtn")
+texture_pressed = ExtResource("4_v4mwk")
+shape = SubResource("CircleShape2D_jdxhr")
+action = "Right"
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+position = Vector2(477, 205.44)
+texture_normal = ExtResource("5_gj07f")
+texture_pressed = ExtResource("6_b32pk")
+shape = SubResource("CircleShape2D_34g3j")
+action = "Jump"

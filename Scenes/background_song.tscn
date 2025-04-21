@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://deeu1wd3re6nl"]
+
+[ext_resource type="Script" path="res://Script/background_song.gd" id="1_2a0o1"]
+[ext_resource type="AudioStream" uid="uid://cpg3ntyeejwyn" path="res://Assets/audio/Background_Song_Lobby.mp3" id="2_iskgw"]
+[ext_resource type="AudioStream" uid="uid://dbnven411lad0" path="res://Assets/audio/Rayman Legends Soundtrack - Teensies in Trouble (1).mp3" id="2_vfwom"]
+
+[node name="Background_Song" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2a0o1")
+
+[node name="Battle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vfwom")
+
+[node name="Lobby" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_iskgw")

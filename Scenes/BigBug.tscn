@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfowxr6xiri7s"]
+
+[ext_resource type="Texture2D" uid="uid://b15gye6ipejsw" path="res://Assets/Tiles/Characters/tile_0021.png" id="1_j0n0f"]
+[ext_resource type="Script" path="res://Script/BigBug.gd" id="1_n8lmo"]
+[ext_resource type="Texture2D" uid="uid://cjxe0r6k3i2l" path="res://Assets/Tiles/Characters/tile_0022.png" id="2_5b0yp"]
+[ext_resource type="Texture2D" uid="uid://ogx41waeusvs" path="res://Assets/Tiles/Characters/tile_0023.png" id="4_gd8rr"]
+[ext_resource type="PackedScene" uid="uid://cv5w5267pxbfx" path="res://Scenes/coin.tscn" id="5_6feoy"]
+[ext_resource type="AudioStream" uid="uid://dukbt8ltbfkry" path="res://Assets/audio/Weakness Touch.wav" id="6_qry10"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8p03d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j0n0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5b0yp")
+}],
+"loop": true,
+"name": &"Awake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gd8rr")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2bx"]
+size = Vector2(24, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ourw0"]
+size = Vector2(20, 3)
+
+[node name="BigBug" type="Area2D"]
+script = ExtResource("1_n8lmo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8p03d")
+animation = &"Dead"
+autoplay = "Awake"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_ks2bx")
+
+[node name="Weakness" type="Area2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weakness"]
+shape = SubResource("RectangleShape2D_ourw0")
+
+[node name="Coin" parent="." instance=ExtResource("5_6feoy")]
+visible = false
+
+[node name="Weakness_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_qry10")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Weakness" to="." method="_on_weakness_area_entered"]

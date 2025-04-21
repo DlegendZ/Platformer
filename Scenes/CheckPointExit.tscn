@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcxyvrg8i01r0"]
+
+[ext_resource type="Script" path="res://Script/CheckPointExit.gd" id="1_04cej"]
+[ext_resource type="Texture2D" uid="uid://nu4r1aftr21c" path="res://Assets/Tiles/tile_0111.png" id="2_egpno"]
+[ext_resource type="Texture2D" uid="uid://bstso13ce0imt" path="res://Assets/Tiles/tile_0112.png" id="3_ir1s8"]
+[ext_resource type="Texture2D" uid="uid://b1u64aq14246v" path="res://Assets/Tiles/tile_0131.png" id="4_72c66"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hjt6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_egpno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ir1s8")
+}],
+"loop": true,
+"name": &"Flag_animation ",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vaey7"]
+size = Vector2(18, 36)
+
+[node name="CheckPoint_ Exit" type="Area2D"]
+script = ExtResource("1_04cej")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="Flag_animation" type="AnimatedSprite2D" parent="Sprite"]
+sprite_frames = SubResource("SpriteFrames_hjt6w")
+animation = &"Flag_animation "
+autoplay = "Flag_animation "
+frame_progress = 0.246195
+
+[node name="Stick" type="Sprite2D" parent="Sprite"]
+position = Vector2(0, 18)
+texture = ExtResource("4_72c66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_vaey7")
+
+[node name="Marker2D" type="Marker2D" parent="."]

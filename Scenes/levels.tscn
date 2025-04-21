@@ -1,0 +1,243 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxvuu7cv2f0l0"]
+
+[ext_resource type="Texture2D" uid="uid://j4sw1dum4o5j" path="res://Assets/Tiles/tile_0104.png" id="1_77x4l"]
+[ext_resource type="Script" path="res://Script/levels.gd" id="1_vfqxc"]
+[ext_resource type="FontFile" uid="uid://dat0ka8ygoodr" path="res://Assets/Font/LilitaOne-Regular.ttf" id="2_5f0bj"]
+[ext_resource type="Texture2D" uid="uid://cbmtjixf8qdxm" path="res://Assets/Tiles/tile_0040.png" id="2_m4x0y"]
+[ext_resource type="Texture2D" uid="uid://bxmd4e733umj8" path="res://Assets/Tiles/tile_0080.png" id="4_753pe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gkx50"]
+font = ExtResource("2_5f0bj")
+font_size = 36
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3xgb4"]
+font = ExtResource("2_5f0bj")
+font_size = 36
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Levels" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vfqxc")
+metadata/_edit_vertical_guides_ = [577.0]
+
+[node name="Level_number" type="Node2D" parent="."]
+
+[node name="Level_1" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_1"]
+offset_left = 59.0
+offset_top = 75.0
+offset_right = 109.0
+offset_bottom = 125.0
+texture_normal = ExtResource("2_m4x0y")
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Level_number/Level_1"]
+offset_left = 64.0
+offset_top = 80.0
+offset_right = 104.0
+offset_bottom = 122.0
+text = "1"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_2" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_2"]
+offset_left = 159.0
+offset_top = 75.0
+offset_right = 209.0
+offset_bottom = 125.0
+texture_normal = ExtResource("2_m4x0y")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level_number/Level_2"]
+offset_left = 164.0
+offset_top = 80.0
+offset_right = 204.0
+offset_bottom = 122.0
+text = "2"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_3" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_3"]
+offset_left = 259.0
+offset_top = 75.0
+offset_right = 309.0
+offset_bottom = 125.0
+texture_normal = ExtResource("2_m4x0y")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level_number/Level_3"]
+offset_left = 264.0
+offset_top = 80.0
+offset_right = 304.0
+offset_bottom = 122.0
+text = "3"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_4" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_4"]
+offset_left = 359.0
+offset_top = 75.0
+offset_right = 409.0
+offset_bottom = 125.0
+texture_normal = ExtResource("2_m4x0y")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level_number/Level_4"]
+offset_left = 364.0
+offset_top = 80.0
+offset_right = 404.0
+offset_bottom = 122.0
+text = "4"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_5" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_5"]
+offset_left = 459.0
+offset_top = 75.0
+offset_right = 509.0
+offset_bottom = 125.0
+texture_normal = ExtResource("2_m4x0y")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level_number/Level_5"]
+offset_left = 464.0
+offset_top = 80.0
+offset_right = 504.0
+offset_bottom = 122.0
+text = "5"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_6" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_6"]
+offset_left = 59.0
+offset_top = 157.0
+offset_right = 109.0
+offset_bottom = 207.0
+texture_normal = ExtResource("4_753pe")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level_number/Level_6"]
+offset_left = 64.0
+offset_top = 162.0
+offset_right = 104.0
+offset_bottom = 204.0
+text = "6
+"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_7" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_7"]
+offset_left = 159.0
+offset_top = 157.0
+offset_right = 209.0
+offset_bottom = 207.0
+texture_normal = ExtResource("4_753pe")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level_number/Level_7"]
+offset_left = 164.0
+offset_top = 162.0
+offset_right = 204.0
+offset_bottom = 204.0
+text = "7
+"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Level_8" type="Node2D" parent="Level_number"]
+visible = false
+
+[node name="TextureButton" type="TextureButton" parent="Level_number/Level_8"]
+offset_left = 259.0
+offset_top = 157.0
+offset_right = 309.0
+offset_bottom = 207.0
+texture_normal = ExtResource("4_753pe")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level_number/Level_8"]
+offset_left = 264.0
+offset_top = 162.0
+offset_right = 304.0
+offset_bottom = 204.0
+text = "8
+"
+label_settings = SubResource("LabelSettings_gkx50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Level text" type="Label" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 18.0
+offset_right = 334.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "LEVEL"
+label_settings = SubResource("LabelSettings_3xgb4")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+offset_right = 577.0
+offset_bottom = 325.0
+texture = ExtResource("1_77x4l")
+
+[connection signal="pressed" from="Level_number/Level_1/TextureButton" to="." method="_on_texture_button_pressed_level_1"]
+[connection signal="pressed" from="Level_number/Level_2/TextureButton" to="." method="_on_texture_button_pressed_level_2"]
+[connection signal="pressed" from="Level_number/Level_3/TextureButton" to="." method="_on_texture_button_pressed_level_3"]
+[connection signal="pressed" from="Level_number/Level_4/TextureButton" to="." method="_on_texture_button_pressed_level_4"]
+[connection signal="pressed" from="Level_number/Level_5/TextureButton" to="." method="_on_texture_button_pressed_level_5"]
+[connection signal="pressed" from="Level_number/Level_6/TextureButton" to="." method="_on_texture_button_pressed_level_6"]
+[connection signal="pressed" from="Level_number/Level_7/TextureButton" to="." method="_on_texture_button_pressed_level_7"]
+[connection signal="pressed" from="Level_number/Level_8/TextureButton" to="." method="_on_texture_button_pressed_level_8"]

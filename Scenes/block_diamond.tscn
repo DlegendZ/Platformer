@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2pvrl50vsaso"]
+
+[ext_resource type="Script" path="res://Script/block_diamond.gd" id="1_5pr8x"]
+[ext_resource type="Texture2D" uid="uid://dvr16lyg2bwtb" path="res://Assets/Tiles/tile_0011.png" id="2_fundx"]
+[ext_resource type="PackedScene" uid="uid://bluas24i8s6sx" path="res://Scenes/diamond.tscn" id="3_ayjsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cttpt"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyjd4"]
+size = Vector2(18, 3)
+
+[node name="BlockDiamond" type="StaticBody2D"]
+z_index = -1
+script = ExtResource("1_5pr8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fundx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_cttpt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_yyjd4")
+
+[node name="Diamond" parent="." instance=ExtResource("3_ayjsq")]
+visible = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
