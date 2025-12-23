@@ -1,46 +1,56 @@
-# Platformer Game
+# Platformer Game 🕹️
 
-A 2D platformer game made with Godot Engine and GDScript, featuring classic run-and-jump mechanics, obstacles, and level progression.
+A **2D platformer game** built with **Godot Engine** and **GDScript**, featuring classic run-and-jump gameplay with smooth controls and level-based design.
 
-## Gameplay
+---
 
-* Side-scrolling platformer style
-* Run, jump, and navigate platforms
-* Avoid obstacles and hazards
-* Collectibles or level goals (if included)
-* Responsive controls and smooth movement
+## 🎮 Gameplay
 
-## Features
+* 🏃‍♂️ Run across platforms
+* ⬆️ Jump over gaps and obstacles
+* ⚠️ Avoid hazards
+* 🧭 Reach the end of each level
+* 🎯 Simple and responsive controls
 
-* Player controller with jump mechanics
-* Collision detection
-* Level design with tiles or scenes
-* Godot scene system
-* Easy to expand with enemies & items
+---
 
-## Built With
+## ✨ Features
 
-| Technology   | Purpose          |
-| ------------ | ---------------- |
-| Godot Engine | Game development |
-| GDScript     | Core game logic  |
-| Scenes       | Level structure  |
-| Assets/      | Sprites & audio  |
+* 🧍 Player movement & jump mechanics
+* 🧱 Collision detection
+* 🗺️ Level-based platform design
+* 🎬 Godot scene system
+* 🔧 Easy to extend with enemies & items
 
-## How to Run
+---
 
-1. Open the project in **Godot Engine**
-2. Load the main scene
-3. Press **Play**
-4. Use keyboard controls to move and jump
+## 🛠️ Built With
 
-## Project Structure
+| Technology      | Purpose                  |
+| --------------- | ------------------------ |
+| 🎮 Godot Engine | Game development         |
+| 🧠 GDScript     | Game logic               |
+| 🧩 Scenes       | Level & object structure |
+| 🎨 Assets       | Sprites & sounds         |
+
+---
+
+## ▶️ How to Run
+
+1. 📂 Open the project in **Godot Engine**
+2. ▶️ Load the main scene
+3. 🎮 Press **Play**
+4. ⌨️ Use keyboard to move and jump
+
+---
+
+## 📁 Project Structure
 
 ```
 Platformer/
-├── Assets/
-├── Scenes/
-├── Scripts/
+├── Assets/ 🎨
+├── Scenes/ 🧩
+├── Scripts/ 🧠
 ├── project.godot
 ├── icon.svg
 └── .gitignore
